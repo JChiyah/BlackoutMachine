@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_43899309279872427aa78844b2ca7fa610b450c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_badcbbb7c23e892f34a3c95e8b0fb1839c75f909\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_f5ca5758145c2d41e3a3a23118546519cc51feaa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_88e8e1a78eaa692064aa8b1c80ce30f758a851f1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_1210ea22ed196f3136bdacf4c171bb0836d6b043\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="6b5e629e0b196da6fc768c28f36fb9e939b72849">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_8d4c9a438260aad98e5db62216a905d29d365270\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_bc1d06711715f998ad0c562a6dfa52981f433020\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_fdd9ac59da58988df2a45dacb464f4a2e510e1dd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_00eb0f57c1370b2744da7cd6b3b930809943d6dd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9ab82ec75916b7cb2d676a444eeec500be61f75e">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b24265382d88dac80a0ce6b304c76aecd2a139ef\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_ed4f622709dd08c59f3f924489afb1b1942fac69\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_b72da5e19fc64ce69e9d6b10d2a5df0b8a11474a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_6695e371bf9249c85f7ede88819b2cb0439a9456\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_39030ffed49504589beab04d6cac7ebc09010543\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_bb8b646e3ecfdf4d6f64127ca8d393a5bd540998\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_66fdc9a1c1d2b1102f9769af797b3fa9c3baa632\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_316ce9241cd86551ded3ef1dfbc061385bd02b79\classes.dex" />
+    </item>
+
+</items>
