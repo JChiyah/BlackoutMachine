@@ -1,13 +1,12 @@
 package com.blackout.blackoutmachine;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.graphics.Color;
 
 
 public class MainActivity extends Activity {
@@ -27,15 +26,17 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                if(endGame = true) {
+                if(endGame) {
                     // Set images back to normal
-                    ((ImageView)findViewById(R.id.slot1)).setBackgroundColor(Color.parseColor("black"));
-                    ((ImageView)findViewById(R.id.slot2)).setBackgroundColor(Color.parseColor("black"));
-                    ((ImageView)findViewById(R.id.slot3)).setBackgroundColor(Color.parseColor("black"));
+                    randomImage((ImageView)findViewById(R.id.slot1));
+                    randomImage((ImageView)findViewById(R.id.slot2));
+                    randomImage((ImageView)findViewById(R.id.slot3));
                     ((ImageView)findViewById(R.id.letras)).setImageResource(R.drawable.letrasjuego);
                     endGame = false;
+                } else {
+                    startGame();
+                    endGame = true;
                 }
-                startGame();
             }
 
         };
@@ -47,7 +48,7 @@ public class MainActivity extends Activity {
     protected void startGame() {
         rlayout.setOnClickListener(null);
 
-        new CountDownTimer(3000, 300) {
+        new CountDownTimer(3500, 500) {
             ImageView slot1 = (ImageView) findViewById(R.id.slot1);
             ImageView slot2 = (ImageView) findViewById(R.id.slot2);
             ImageView slot3 = (ImageView) findViewById(R.id.slot3);
@@ -69,17 +70,19 @@ public class MainActivity extends Activity {
 
             protected void randomImage(ImageView img) {
                 if(Math.random() < 0.30) {
-                    //img.setImageResource(R.drawable.botella);
-                    img.setBackgroundColor(Color.parseColor("red"));
+                    img.setImageResource(R.drawable.botella);
                 } else if(Math.random() < 0.30) {
-                    //img.setImageResource(R.drawable.llavero);
-                    img.setBackgroundColor(Color.parseColor("blue"));
+                    img.setImageResource(R.drawable.llavero);
                 } else if(Math.random() < 0.30) {
-                    //img.setImageResource(R.drawable.llavero);
-                    img.setBackgroundColor(Color.parseColor("yellow"));
+                    img.setImageResource(R.drawable.sticker);
                 } else if(Math.random() < 0.30) {
-                    //img.setImageResource(R.drawable.llavero);
-                    img.setBackgroundColor(Color.parseColor("green"));
+                    img.setImageResource(R.drawable.gorras);
+                } else if(Math.random() < 0.30) {
+                    img.setImageResource(R.drawable.chupito);
+                } else if(Math.random() < 0.30) {
+                    img.setImageResource(R.drawable.powerbank);
+                } else if(Math.random() < 0.30) {
+                    img.setImageResource(R.drawable.camiseta);
                 }
             }
 
@@ -91,7 +94,24 @@ public class MainActivity extends Activity {
                 rlayout.setOnClickListener(bgListener);
             }
         }.start();
-        endGame = true;
+    }
+
+    protected void randomImage(ImageView img) {
+        if(Math.random() < 0.30) {
+            img.setImageResource(R.drawable.botella);
+        } else if(Math.random() < 0.30) {
+            img.setImageResource(R.drawable.llavero);
+        } else if(Math.random() < 0.30) {
+            img.setImageResource(R.drawable.sticker);
+        } else if(Math.random() < 0.30) {
+            img.setImageResource(R.drawable.gorras);
+        } else if(Math.random() < 0.30) {
+            img.setImageResource(R.drawable.chupito);
+        } else if(Math.random() < 0.30) {
+            img.setImageResource(R.drawable.powerbank);
+        } else if(Math.random() < 0.30) {
+            img.setImageResource(R.drawable.camiseta);
+        }
     }
 
 }

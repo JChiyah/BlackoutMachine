@@ -21,12 +21,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_f5ca5758145c2d41e3a3a23118546519cc51feaa\classes.dex" />
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_a3151ebbbcb352c921edc9c5a78a8da089493d3e\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -48,11 +48,47 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_d5635659db2ce925669dc164bf7c6f92c1d2fb22\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_39030ffed49504589beab04d6cac7ebc09010543\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_66fdc9a1c1d2b1102f9769af797b3fa9c3baa632\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_f5ca5758145c2d41e3a3a23118546519cc51feaa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="af4d55d1610b3495ecab9cb800d36ca15b9bab9c">
+        sha1="ab3297d1faa4c9ff6d87987bd4c4610b77f9d0ac">
         <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_8d4c9a438260aad98e5db62216a905d29d365270\classes.dex" />
     </item>
     <item
@@ -88,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="8aac484aadea93bd5ccedfd8000385ccf44c127c">
+        sha1="adbe6552cee88bd6c22f2ff721043d9936a6d0f8">
         <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b24265382d88dac80a0ce6b304c76aecd2a139ef\classes.dex" />
     </item>
     <item
@@ -120,30 +156,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_39030ffed49504589beab04d6cac7ebc09010543\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
         <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_bb8b646e3ecfdf4d6f64127ca8d393a5bd540998\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_66fdc9a1c1d2b1102f9769af797b3fa9c3baa632\classes.dex" />
     </item>
     <item
         is-multidex="true"
