@@ -45,6 +45,7 @@
                 android:layout_height="100dp"
                 android:src="@drawable/botella"
                 android:id="@+id/slot1"
+                android:tag="botella"
                 android:contentDescription="@string/premio" />
 
             <ImageView
@@ -56,6 +57,7 @@
                 android:paddingEnd="0dp"
                 android:src="@drawable/chupito"
                 android:id="@+id/slot2"
+                android:tag="chupito"
                 android:contentDescription="@string/premio" />
 
             <ImageView
@@ -65,14 +67,15 @@
                 android:paddingStart="15dp"
                 android:paddingRight="0dp"
                 android:paddingEnd="0dp"
-                android:src="@drawable/gorras"
+                android:src="@drawable/gorra"
                 android:id="@+id/slot3"
+                android:tag="gorra"
                 android:contentDescription="@string/premio" />
 
         </LinearLayout>
 
         <ImageView
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
