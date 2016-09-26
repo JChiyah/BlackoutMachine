@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_settings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="com.blackout.blackoutmachine.SettingsActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fondo"
+        android:id="@+id/imageView"
+        android:contentDescription="@string/fondo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:text="@string/newGameText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="120dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="120dp"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24dp"
+                    android:textColor="#ffffff"
+                    android:text="@string/nombre"/>
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:padding="5dp"
+                    android:background="#ffffff"
+                    android:inputType="text"
+                    android:textSize="24dp"
+                    android:textColor="#000000"
+                    android:id="@+id/inputNombre"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="2">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:stretchColumns="3"
+                    android:layout_weight="1">
+
+                    <TableRow style="@style/SettingsRow">
+                        <ImageView
+                            style="@style/SettingsImg"
+                            android:src="@drawable/botella"
+                            android:contentDescription="@string/premio" />
+                        <TextView
+                            style="@style/SettingsText"
+                            android:text="@string/premio" />
+                        <EditText
+                            style="@style/SettingsInput"
+                            android:id="@+id/inputBotella" />
+                    </TableRow>
+                    <TableRow style="@style/SettingsRow">
+                        <ImageView
+                            style="@style/SettingsImg"
+                            android:src="@drawable/camiseta"
+                            android:contentDescription="@string/premio" />
+                        <TextView
+                            style="@style/SettingsText"
+                            android:text="@string/premio" />
+                        <EditText
+                            style="@style/SettingsInput"
+                            android:id="@+id/inputCamiseta" />
+                    </TableRow>
+                    <TableRow style="@style/SettingsRow">
+                        <ImageView
+                            style="@style/SettingsImg"
+                            android:src="@drawable/chupito"
+                            android:contentDescription="@string/premio" />
+                        <TextView
+                            style="@style/SettingsText"
+                            android:text="@string/premio" />
+                        <EditText
+                            style="@style/SettingsInput"
+                            android:id="@+id/inputChupito" />
+                    </TableRow>
+                    <TableRow style="@style/SettingsRow">
+                        <ImageView
+                            style="@style/SettingsImg"
+                            android:src="@drawable/descuento"
+                            android:contentDescription="@string/premio" />
+                        <TextView
+                            style="@style/SettingsText"
+                            android:text="@string/premio" />
+                        <EditText
+                            style="@style/SettingsInput"
+                            android:id="@+id/inputDescuento" />
+                    </TableRow>
+                </TableLayout>
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:stretchColumns="3"
+                    android:layout_weight="1">
+
+                    <TableRow style="@style/SettingsRow">
+                        <ImageView
+                            style="@style/SettingsImg"
+                            android:src="@drawable/gorra"
+                            android:contentDescription="@string/premio" />
+                        <TextView
+                            style="@style/SettingsText"
+                            android:text="@string/premio" />
+                        <EditText
+                            style="@style/SettingsInput"
+                            android:id="@+id/inputGorra" />
+                    </TableRow>
+                    <TableRow style="@style/SettingsRow">
+                        <ImageView
+                            style="@style/SettingsImg"
+                            android:src="@drawable/llavero"
+                            android:contentDescription="@string/premio" />
+                        <TextView
+                            style="@style/SettingsText"
+                            android:text="@string/premio" />
+                        <EditText
+                            style="@style/SettingsInput"
+                            android:id="@+id/inputLlavero" />
+                    </TableRow>
+                    <TableRow style="@style/SettingsRow">
+                        <ImageView
+                            style="@style/SettingsImg"
+                            android:src="@drawable/powerbank"
+                            android:contentDescription="@string/premio" />
+                        <TextView
+                            style="@style/SettingsText"
+                            android:text="@string/premio" />
+                        <EditText
+                            style="@style/SettingsInput"
+                            android:id="@+id/inputPowerbank" />
+                    </TableRow>
+                    <TableRow style="@style/SettingsRow">
+                        <ImageView
+                            style="@style/SettingsImg"
+                            android:src="@drawable/sticker"
+                            android:contentDescription="@string/premio" />
+                        <TextView
+                            style="@style/SettingsText"
+                            android:text="@string/premio" />
+                        <EditText
+                            style="@style/SettingsInput"
+                            android:id="@+id/inputSticker" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="20dp"
+                android:text="@string/crearjuego"
+                android:onClick="createGame" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

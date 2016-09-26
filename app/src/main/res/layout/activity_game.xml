@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_game"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="com.blackout.blackoutmachine.GameActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fondo"
+        android:id="@+id/imageView"
+        android:contentDescription="@string/fondo" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/machine">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="false"
+            android:src="@drawable/tragaperras"
+            android:id="@+id/machineImg"
+            android:contentDescription="@string/maquina" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="135dp"
+            android:paddingTop="390dp"
+            android:id="@+id/slots">
+
+            <ImageView
+                style="@style/GameSlots"
+                android:src="@drawable/botella"
+                android:id="@+id/slot1"
+                android:tag="botella" />
+
+            <ImageView
+                style="@style/GameSlots"
+                android:src="@drawable/chupito"
+                android:id="@+id/slot2"
+                android:tag="chupito" />
+
+            <ImageView
+                style="@style/GameSlots"
+                android:src="@drawable/gorra"
+                android:id="@+id/slot3"
+                android:tag="gorra" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/letrasjuego"
+            android:id="@+id/letras"
+            android:contentDescription="@string/letrasjuego"/>
+
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="310dp"
+            android:layout_marginEnd="120dp"
+            android:id="@+id/premio"
+            android:contentDescription="@string/letrasjuego"/>
+
+    </RelativeLayout>
+
+</FrameLayout>
+

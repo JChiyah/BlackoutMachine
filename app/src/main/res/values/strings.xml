@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">Blackout Machine</string>
 
-    <string name="title_activity_start">StartActivity</string>
-    <string name="newGameText">Configuracion de la nueva partida</string>
+    <string name="newGameText">Configurar nueva partida</string>
 
     <string name="premio">Premio</string>
+    <string name="logo">Logo</string>
     <string name="fondo">Fondo de pantalla</string>
     <string name="maquina">Maquina tragaperras</string>
     <string name="letrasjuego">Letras juego</string>
+    <string name="nuevojuego">Nueva partida</string>
+    <string name="nombre">Nombre</string>
+    <string name="crearjuego">Crear partida</string>
 </resources>

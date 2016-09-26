@@ -12,15 +12,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.2.1_d5635659db2ce925669dc164bf7c6f92c1d2fb22.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -57,15 +48,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.2.1_a3151ebbbcb352c921edc9c5a78a8da089493d3e.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -79,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="fea0a95aaf695887d10dc6b581535f5b8d812e00">
+        sha1="997b1d3a1605f2e53fb3c83353ecc61a6a58d234">
         <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\pre-dexed\debug\instant-run_8d4c9a438260aad98e5db62216a905d29d365270.jar" />
     </item>
     <item
@@ -124,7 +106,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="88eb69af957e0a18b4bb7142309ffb77e2596cca">
+        sha1="2a696155ea9c935c375ea8300b9b0796c9cbef90">
         <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_b24265382d88dac80a0ce6b304c76aecd2a139ef.jar" />
     </item>
     <item
