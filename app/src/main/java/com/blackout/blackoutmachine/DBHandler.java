@@ -28,7 +28,7 @@ public class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_GAMES_TABLE = "CREATE TABLE IF NOT EXISTS " + GAMES_TABLE + "("
-                + "id INTEGER PRIMARY KEY, "
+                + "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
                 + "nombre TEXT, "
                 + "botella INT, "
                 + "camiseta INT, "
@@ -122,6 +122,42 @@ public class DBHandler extends SQLiteOpenHelper {
         }
         // return list
         return gameList;
+    }
+
+    /**
+     * Update a game
+     * @param game
+     * @return
+     */
+    public int updateGame(GameObject game) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        /* Game values */
+        values.put("nombre", game.getNombre());
+        values.put("botella", game.getBotella());
+        values.put("camiseta", game.getCamiseta());
+        values.put("chupito", game.getChupito());
+        values.put("descuento", game.getDescuento());
+        values.put("gorra", game.getGorra());
+        values.put("llavero", game.getLlavero());
+        values.put("powerbank", game.getPowerbank());
+        values.put("sticker", game.getSticker());
+
+        // Inserting row
+        return db.update(GAMES_TABLE, values, "id" + " = ?",
+                new String[]{String.valueOf(game.getId())});
+    }
+
+    /**
+     * Delete a game
+     * @param game
+     */
+    public void deleteGame(GameObject game) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(GAMES_TABLE, "id" + " = ?",
+                new String[] { String.valueOf(game.getId()) });
+        db.close();
     }
 
 }

@@ -1,18 +1,21 @@
 package com.blackout.blackoutmachine;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public final static String ID = "com.blackout.blackoutmachine.ID";
-    public int id;
+    protected int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
         List<GameObject> games = db.getAllGames();
 
         if(!games.isEmpty()) {
+            Button[] infoButtons = {(Button)findViewById(R.id.info1), (Button)findViewById(R.id.info2), (Button)findViewById(R.id.info3)};
+            Button[] deleteButtons = {(Button)findViewById(R.id.delete1), (Button)findViewById(R.id.delete2), (Button)findViewById(R.id.delete3)};
+
             // Show games
             int i = 0;
             TextView[] ids = {(TextView)findViewById(R.id.game1), (TextView)findViewById(R.id.game2),(TextView)findViewById(R.id.game3)};
@@ -39,12 +45,17 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(v.getContext(), GameActivity.class);
-                        intent.putExtra(ID, id);
+                        intent.putExtra("game_id", id);
                         startActivity(intent);
                     }
                 });
+                infoButtons[i].setVisibility(View.VISIBLE);
+                infoButtons[i].setTag(id);
+                deleteButtons[i].setVisibility(View.VISIBLE);
+                deleteButtons[i].setTag(id);
                 i++;
             }
+
             if(i < 3) {
                 // Assign listeners to configure game
                 for(; i < 3; i++) {
@@ -69,6 +80,32 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         }
+
+    }
+
+    protected void deleteGame(final View view) {
+        // Alerta! Seguro?
+        new AlertDialog.Builder(this)
+                .setTitle("Eliminar partida")
+                .setMessage("Estas seguro de querer eliminar esta partida?")
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        Toast.makeText(MainActivity.this, "Partida eliminada", Toast.LENGTH_SHORT).show();
+
+                        // Delete game
+                        DBHandler db = new DBHandler(getApplicationContext());
+                        db.deleteGame(db.getGame((Integer)view.getTag()));
+                        db.close();
+
+                        // Reload
+                        Intent intent = getIntent();
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        finish();
+                        startActivity(intent);
+                    }})
+                .setNegativeButton(android.R.string.no, null).show();
 
     }
 }

@@ -10,5 +10,13 @@
     <string name="letrasjuego">Letras juego</string>
     <string name="nuevojuego">Nueva partida</string>
     <string name="nombre">Nombre</string>
+
+
+    <!-- Main activity -->
     <string name="crearjuego">Crear partida</string>
+    <string name="infojuego">Info</string>
+    <string name="eliminarjuego">Eliminar</string>
+
+    <string name="alertyes">Confirmar</string>
+    <string name="alertno">Cancelar</string>
 </resources>

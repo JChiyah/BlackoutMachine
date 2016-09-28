@@ -1,5 +1,8 @@
 package com.blackout.blackoutmachine;
 
+import java.lang.reflect.Field;
+import java.util.HashMap;
+
 /**
  * Created by JChiyah on 26/09/2016.
  */
@@ -26,6 +29,31 @@ public class GameObject {
         this.llavero = llavero;
         this.powerbank = powerbank;
         this.sticker = sticker;
+    }
+
+    public HashMap<String, Integer> getPremios(GameObject game) {
+        HashMap<String, Integer> premios = new HashMap<String, Integer>();
+
+        // Reflection
+        for (Field field : GameObject.class.getDeclaredFields()){
+            if ((field.getModifiers() != 0) && (int.class == field.getType())) {
+                try {
+                    premios.put(field.getName(), (Integer) field.get(game));
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return premios;
+    }
+
+    /*
+    public void main(String arg[]) {
+        HashMap<String, Integer> premios = getPremios(new Object -> game);
+        for(HashMap.Entry<String, Integer> premio : premios.entrySet()) {
+            System.out.println(premio.getKey() + ":  " + premio.getValue());
+        }
     }
 
     /**

@@ -61,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="997b1d3a1605f2e53fb3c83353ecc61a6a58d234">
+        sha1="1d34a97641bf7226a4be2b3aa8c2d43e15a045bc">
         <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\pre-dexed\debug\instant-run_8d4c9a438260aad98e5db62216a905d29d365270.jar" />
     </item>
     <item
@@ -106,7 +106,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="2a696155ea9c935c375ea8300b9b0796c9cbef90">
+        sha1="8998bd1ff27e80889f0cfd67975272ed2fed45e1">
         <dex dex="C:\Users\JChiyah\Development\Android\BlackoutMachine\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_b24265382d88dac80a0ce6b304c76aecd2a139ef.jar" />
     </item>
     <item
