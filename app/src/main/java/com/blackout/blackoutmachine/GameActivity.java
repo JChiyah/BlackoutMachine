@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
+import java.util.TreeMap;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -25,7 +26,7 @@ public class GameActivity extends AppCompatActivity {
     protected int resID;
     protected List<String> premios;
     protected String premio; // El proximo premio en salir
-    protected HashMap<String, Integer> prizes;
+    protected TreeMap<String, Integer> prizes;
     // Algoritmo para sacar imgs
     protected int totalSum;
 
@@ -72,7 +73,7 @@ public class GameActivity extends AppCompatActivity {
 
     protected void randomImage(ImageView img) {
         Resources res = getResources();
-        int resID = res.getIdentifier(premios.get(rand.nextInt(premios.size())) , "drawable", getPackageName());
+        resID = res.getIdentifier(premios.get(rand.nextInt(premios.size())) , "drawable", getPackageName());
         img.setImageResource(resID);
     }
 

@@ -1,35 +1,76 @@
 package com.blackout.blackoutmachine;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TableLayout;
+import android.widget.TextView;
+
+import java.util.TreeMap;
 
 public class SettingsActivity extends AppCompatActivity {
+
+    protected EditText[] editTexts = new EditText[8];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        loadData();
+    }
+
+    protected void loadData() {
+        Resources res = getResources();
+        GameObject game = new GameObject(); // Get an empty game for names and images
+        TreeMap<String, Integer> prizes = game.getPremios(game);
+
+        TableLayout table1 = (TableLayout)findViewById(R.id.detailstable1);
+        TableLayout table2 = (TableLayout)findViewById(R.id.detailstable2);
+        LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        int i = 0;
+        for(TreeMap.Entry<String, Integer> entry : prizes.entrySet()) {
+            if((!entry.getKey().equals("id")) && (entry.getKey() != null)) {
+                View row = inflater.inflate(R.layout.content_settings, null);
+
+                ImageView img = (ImageView)row.findViewById(R.id.imagenpremio);
+                img.setImageResource(res.getIdentifier(entry.getKey(), "drawable", getPackageName()));
+
+                TextView text = (TextView)row.findViewById(R.id.nombrepremio);
+                text.setText(entry.getKey().substring(0, 1).toUpperCase() + entry.getKey().substring(1));
+
+                editTexts[i] = (EditText)row.findViewById(R.id.editpremio);
+
+                if(i < 4) {
+                    table1.addView(row, 0);
+                } else {
+                    table2.addView(row, 0);
+                }
+                i++;
+            }
+        }
     }
 
     protected void createGame(View view) {
-        // Get all inputs and their values
-        EditText[] inputs = {
-                (EditText)findViewById(R.id.inputNombre), (EditText)findViewById(R.id.inputBotella),
-                (EditText)findViewById(R.id.inputCamiseta), (EditText)findViewById(R.id.inputChupito),
-                (EditText)findViewById(R.id.inputDescuento), (EditText)findViewById(R.id.inputGorra),
-                (EditText)findViewById(R.id.inputLlavero), (EditText)findViewById(R.id.inputMechero),
-                (EditText)findViewById(R.id.inputSticker)};
 
-        String nombre = inputs[0].getText().toString();
+        String nombre = ((EditText)findViewById(R.id.inputNombre)).getText().toString();
+
+        // Inputs are saved to editTexts by alphabetical order
         int[] values = new int[8];
-        for(int i = 1; i < 9; i++) {
-            if(inputs[i].getText().toString().matches(""))
-                values[i-1] = 0;
+        String tmp;
+        for(int i = 0; i < 8; i++) {
+            tmp = editTexts[i].getText().toString();
+            if(tmp.matches(""))
+                values[i] = 0;
             else
-                values[i-1] = Integer.parseInt(inputs[i].getText().toString());
+                values[i] = Integer.parseInt(tmp);
         }
 
         //Create object and add it to the DB
@@ -38,6 +79,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         DBHandler db = new DBHandler(getApplicationContext());
         db.addGame(game);
+        db.close();
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SettingsRow"
+    tools:context="com.blackout.blackoutmachine.DetailsActivity" >
+
+    <ImageView
+        style="@style/SettingsImg"
+        android:contentDescription="@string/premio"
+        android:id="@+id/imagenpremio"/>
+
+    <TextView
+        style="@style/SettingsText"
+        android:text="@string/premio"
+        android:id="@+id/nombrepremio"/>
+
+    <TextView
+        style="@style/SettingsText"
+        android:text=""
+        android:id="@+id/cantidadpremio"/>
+
+    <EditText
+        style="@style/SettingsInput"
+        android:id="@+id/editpremio"
+        android:visibility="invisible" />
+
+</TableRow>

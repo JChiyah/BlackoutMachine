@@ -3,13 +3,14 @@
     package="com.blackout.blackoutmachine">
 
     <uses-sdk
-        android:minSdkVersion="17"
+        android:minSdkVersion="16"
         android:targetSdkVersion="19" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -36,22 +37,26 @@
         <activity
             android:name=".SettingsActivity"
             android:screenOrientation="sensorLandscape" />
-
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".DetailsActivity"
             android:screenOrientation="sensorLandscape" />
-
-        <activity android:name=".FacebookActivity"
+        <activity
+            android:name=".LoginActivity"
             android:screenOrientation="sensorLandscape" />
-
-        <activity android:name="com.facebook.FacebookActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        <activity
+            android:name=".FacebookActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <provider
             android:name="com.facebook.FacebookContentProvider"
             android:authorities="com.facebook.app.FacebookContentProvider"
             android:exported="true" />
+
     </application>
 
 </manifest>

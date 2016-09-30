@@ -29,4 +29,8 @@
     <string name="blackout">Blackout</string>
     <string name="action_settings">LogOut</string>
 
+    <!-- Details Activity -->
+    <string name="editGameText">Detalles de la partida</string>
+    <string name="editarjuego">Modificar</string>
+    <string name="cancelbutton">Cancelar</string>
 </resources>

@@ -1,7 +1,7 @@
 package com.blackout.blackoutmachine;
 
 import java.lang.reflect.Field;
-import java.util.HashMap;
+import java.util.TreeMap;
 
 /**
  * Created by JChiyah on 26/09/2016.
@@ -31,14 +31,15 @@ public class GameObject {
         this.sticker = sticker;
     }
 
-    public HashMap<String, Integer> getPremios(GameObject game) {
-        HashMap<String, Integer> premios = new HashMap<String, Integer>();
+    public TreeMap<String, Integer> getPremios(GameObject game) {
+        TreeMap<String, Integer> premios = new TreeMap<String, Integer>();
 
         // Reflection
         for (Field field : GameObject.class.getDeclaredFields()){
             if ((field.getModifiers() != 0) && (int.class == field.getType())) {
                 try {
-                    premios.put(field.getName(), (Integer) field.get(game));
+                    if(!field.getName().equals("id") || field.getName().equals("nombre"))
+                        premios.put(field.getName(), (Integer) field.get(game));
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }

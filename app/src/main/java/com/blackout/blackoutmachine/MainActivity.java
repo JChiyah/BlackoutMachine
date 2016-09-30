@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         DBHandler db = new DBHandler(this);
         List<GameObject> games = db.getAllGames();
+        db.close();
 
         if(!games.isEmpty()) {
             Button[] infoButtons = {(Button)findViewById(R.id.info1), (Button)findViewById(R.id.info2), (Button)findViewById(R.id.info3)};
@@ -55,7 +56,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 infoButtons[i].setVisibility(View.VISIBLE);
-                infoButtons[i].setTag(id);
+                infoButtons[i].setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(v.getContext(), DetailsActivity.class);
+                        intent.putExtra("game_id", id);
+                        startActivity(intent);
+                    }
+                });
                 deleteButtons[i].setVisibility(View.VISIBLE);
                 deleteButtons[i].setTag(id);
                 i++;
@@ -97,12 +105,12 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        Toast.makeText(MainActivity.this, "Partida eliminada", Toast.LENGTH_SHORT).show();
-
                         // Delete game
                         DBHandler db = new DBHandler(getApplicationContext());
                         db.deleteGame(db.getGame((Integer)view.getTag()));
                         db.close();
+
+                        Toast.makeText(MainActivity.this, "Partida eliminada", Toast.LENGTH_SHORT).show();
 
                         // Reload
                         Intent intent = getIntent();
