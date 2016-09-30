@@ -1,4 +1,8 @@
 <resources>
+
+    <!-- Facebook -->
+    <string name="facebook_app_id">148751758914774</string>
+
     <string name="app_name">Blackout Machine</string>
 
     <string name="newGameText">Configurar nueva partida</string>
@@ -19,4 +23,10 @@
 
     <string name="alertyes">Confirmar</string>
     <string name="alertno">Cancelar</string>
+
+    <!-- Facebook Activity -->
+    <string name="darlike">Dale a Me Gusta para jugar!</string>
+    <string name="blackout">Blackout</string>
+    <string name="action_settings">LogOut</string>
+
 </resources>

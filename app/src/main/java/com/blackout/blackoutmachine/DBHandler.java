@@ -36,7 +36,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 + "descuento INT, "
                 + "gorra INT, "
                 + "llavero INT, "
-                + "powerbank INT, "
+                + "mechero INT, "
                 + "sticker INT"
                 + ")";
         db.execSQL(CREATE_GAMES_TABLE);
@@ -66,7 +66,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put("descuento", game.getDescuento());
         values.put("gorra", game.getGorra());
         values.put("llavero", game.getLlavero());
-        values.put("powerbank", game.getPowerbank());
+        values.put("mechero", game.getMechero());
         values.put("sticker", game.getSticker());
 
         // Inserting row
@@ -83,7 +83,7 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(GAMES_TABLE, new String[] { "id",
                 "nombre", "botella", "camiseta", "chupito", "descuento",
-                "gorra", "llavero", "powerbank", "sticker" }, "id" + "=?",
+                "gorra", "llavero", "mechero", "sticker" }, "id" + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
@@ -141,7 +141,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put("descuento", game.getDescuento());
         values.put("gorra", game.getGorra());
         values.put("llavero", game.getLlavero());
-        values.put("powerbank", game.getPowerbank());
+        values.put("mechero", game.getMechero());
         values.put("sticker", game.getSticker());
 
         // Inserting row

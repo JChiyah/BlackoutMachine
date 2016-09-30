@@ -21,11 +21,13 @@ public class GameActivity extends AppCompatActivity {
     protected GameObject game;
     protected View.OnClickListener bgListener;
     protected FrameLayout rlayout;
-    protected Random rdm = new Random();
+    protected Random rand = new Random();
     protected int resID;
     protected List<String> premios;
     protected String premio; // El proximo premio en salir
     protected HashMap<String, Integer> prizes;
+    // Algoritmo para sacar imgs
+    protected int totalSum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +50,10 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(endGame) {
-                    // Set images back to normal
-                    randomImage((ImageView)findViewById(R.id.slot1));
-                    randomImage((ImageView)findViewById(R.id.slot2));
-                    randomImage((ImageView)findViewById(R.id.slot3));
-                    ((ImageView)findViewById(R.id.premio)).setImageResource(android.R.color.transparent); // Set prize image to transparent
-                    ((ImageView)findViewById(R.id.letras)).setImageResource(R.drawable.letrasjuego);
                     endGame = false;
+                    Intent intent = new Intent(v.getContext(), LoginActivity.class);
+                    intent.putExtra("game_id", getIntent().getIntExtra("game_id", 0));
+                    startActivity(intent);
                 } else {
                     startGame();
                     endGame = true;
@@ -73,7 +72,7 @@ public class GameActivity extends AppCompatActivity {
 
     protected void randomImage(ImageView img) {
         Resources res = getResources();
-        int resID = res.getIdentifier(premios.get(rdm.nextInt(premios.size())) , "drawable", getPackageName());
+        int resID = res.getIdentifier(premios.get(rand.nextInt(premios.size())) , "drawable", getPackageName());
         img.setImageResource(resID);
     }
 
@@ -82,7 +81,7 @@ public class GameActivity extends AppCompatActivity {
         final long sleep;
 
         public ImageChanger(int numberOfTimes, long sleep) {
-            this.numberOfTimes = numberOfTimes + rdm.nextInt(3);
+            this.numberOfTimes = numberOfTimes + rand.nextInt(3);
             this.sleep = sleep;
         }
 
@@ -106,7 +105,6 @@ public class GameActivity extends AppCompatActivity {
                     ((ImageView)findViewById(R.id.slot2)).setImageResource(resID);
                     ((ImageView)findViewById(R.id.slot3)).setImageResource(resID);
 
-                    selectPrize(premio);
                 }
             });
         }
@@ -126,13 +124,14 @@ public class GameActivity extends AppCompatActivity {
             try {
                 // Juego
                 for(int i = 0; i < numberOfTimes; i++) {
-                    changeImage();
                     Thread.sleep(sleep);
+                    changeImage();
+
                 }
                 displayPrize(); // Decidir y poner un premio
                 //Thread.sleep(sleep/4);
                 displayWinText(); // Mostrar letras de premio
-
+                selectPrize(premio);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -146,6 +145,7 @@ public class GameActivity extends AppCompatActivity {
         for(HashMap.Entry<String, Integer> entry : prizes.entrySet()) {
             if((entry.getValue() != 0) && (!entry.getKey().equals("id")) && (entry.getKey() != null)) {
                 premios.add(entry.getKey());
+                totalSum = totalSum + entry.getValue();
             }
         }
         if(premios.size() < 1) { // No hay mas premios a repartir
@@ -160,10 +160,8 @@ public class GameActivity extends AppCompatActivity {
         if(premioAnterior != null) {
             prizes.put(premioAnterior, prizes.get(premioAnterior) - 1);
             // Reflection! Llama a una funcion dinamicamente
-            String message = "no";
             try {
                 GameObject.class.getMethod("set" + premioAnterior.substring(0, 1).toUpperCase() + premioAnterior.substring(1), Integer.TYPE).invoke(game, prizes.get(premioAnterior));
-                message = premioAnterior + " restantes: " + prizes.get(premioAnterior);
             } catch(NoSuchMethodException e) {
                 e.printStackTrace();
             } catch(IllegalAccessException e) {
@@ -174,23 +172,35 @@ public class GameActivity extends AppCompatActivity {
             DBHandler db = new DBHandler(getApplicationContext());
             db.updateGame(game);
             db.close();
-
-            Toast toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG);
-            toast.show();
         }
 
         try {
             // Seleccionar el proximo premio
-            int i = 0;
+            int kill = 0;
             do {
-                premio = premios.get(rdm.nextInt(premios.size()));
-                i++;
-                if (i > 100) // Parar en caso de que se trabe
+                int index = rand.nextInt(totalSum);
+                int sum = 0;
+                int i = 0;
+                while(sum < index ) {
+                    sum = sum + (int)GameObject.class.getMethod("get" + premios.get(i).substring(0, 1).toUpperCase() + premios.get(i).substring(1)).invoke(game);;
+                    i++;
+                }
+                premio = premios.get(Math.max(0,i-1));
+
+                kill++;
+                if (kill > 100) // Parar en caso de que se trabe
                     killActivity();
             } while (prizes.get(premio) < 1);
+            totalSum--;
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
             killActivity();
+        } catch(NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch(IllegalAccessException e) {
+            e.printStackTrace();
+        } catch(InvocationTargetException e) {
+            e.printStackTrace();
         }
     }
 

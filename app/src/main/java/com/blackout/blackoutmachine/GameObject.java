@@ -11,14 +11,14 @@ public class GameObject {
 
     private int id;
     private String nombre;
-    private int botella, camiseta, chupito, descuento, gorra, llavero, powerbank, sticker;
+    private int botella, camiseta, chupito, descuento, gorra, llavero, mechero, sticker;
 
     public GameObject() {
 
     }
 
     public GameObject(int id, String nombre, int botella, int camiseta, int chupito,
-                      int descuento, int gorra, int llavero, int powerbank, int sticker) {
+                      int descuento, int gorra, int llavero, int mechero, int sticker) {
         this.id = id;
         this.nombre = nombre;
         this.botella = botella;
@@ -27,7 +27,7 @@ public class GameObject {
         this.descuento = descuento;
         this.gorra = gorra;
         this.llavero = llavero;
-        this.powerbank = powerbank;
+        this.mechero = mechero;
         this.sticker = sticker;
     }
 
@@ -46,14 +46,6 @@ public class GameObject {
         }
 
         return premios;
-    }
-
-    /*
-    public void main(String arg[]) {
-        HashMap<String, Integer> premios = getPremios(new Object -> game);
-        for(HashMap.Entry<String, Integer> premio : premios.entrySet()) {
-            System.out.println(premio.getKey() + ":  " + premio.getValue());
-        }
     }
 
     /**
@@ -83,8 +75,8 @@ public class GameObject {
     public int getLlavero() {
         return llavero;
     }
-    public int getPowerbank() {
-        return powerbank;
+    public int getMechero() {
+        return mechero;
     }
     public int getSticker() {
         return sticker;
@@ -111,8 +103,8 @@ public class GameObject {
     public void setLlavero(int llavero) {
         this.llavero = llavero;
     }
-    public void setPowerbank(int powerbank) {
-        this.powerbank = powerbank;
+    public void setMechero(int powerbank) {
+        this.mechero = powerbank;
     }
     public void setSticker(int sticker) {
         this.sticker = sticker;

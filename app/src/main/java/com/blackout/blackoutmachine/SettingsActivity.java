@@ -8,8 +8,6 @@ import android.widget.EditText;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +20,7 @@ public class SettingsActivity extends AppCompatActivity {
                 (EditText)findViewById(R.id.inputNombre), (EditText)findViewById(R.id.inputBotella),
                 (EditText)findViewById(R.id.inputCamiseta), (EditText)findViewById(R.id.inputChupito),
                 (EditText)findViewById(R.id.inputDescuento), (EditText)findViewById(R.id.inputGorra),
-                (EditText)findViewById(R.id.inputLlavero), (EditText)findViewById(R.id.inputPowerbank),
+                (EditText)findViewById(R.id.inputLlavero), (EditText)findViewById(R.id.inputMechero),
                 (EditText)findViewById(R.id.inputSticker)};
 
         String nombre = inputs[0].getText().toString();

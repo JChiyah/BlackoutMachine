@@ -158,14 +158,14 @@
                     <TableRow style="@style/SettingsRow">
                         <ImageView
                             style="@style/SettingsImg"
-                            android:src="@drawable/powerbank"
+                            android:src="@drawable/mechero"
                             android:contentDescription="@string/premio" />
                         <TextView
                             style="@style/SettingsText"
                             android:text="@string/premio" />
                         <EditText
                             style="@style/SettingsInput"
-                            android:id="@+id/inputPowerbank" />
+                            android:id="@+id/inputMechero" />
                     </TableRow>
                     <TableRow style="@style/SettingsRow">
                         <ImageView

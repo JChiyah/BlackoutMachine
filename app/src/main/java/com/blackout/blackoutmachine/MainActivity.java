@@ -25,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
         configureButtons();
     }
 
+    @Override
+    public void onBackPressed() {
+        this.finishAffinity();
+    }
+
     private void configureButtons() {
         LinearLayout[] buttons = {(LinearLayout)findViewById(R.id.gameButton1), (LinearLayout)findViewById(R.id.gameButton2), (LinearLayout)findViewById(R.id.gameButton3)};
 
@@ -44,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 buttons[i].setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(v.getContext(), GameActivity.class);
+                        Intent intent = new Intent(v.getContext(), LoginActivity.class);
                         intent.putExtra("game_id", id);
                         startActivity(intent);
                     }
@@ -108,4 +113,5 @@ public class MainActivity extends AppCompatActivity {
                 .setNegativeButton(android.R.string.no, null).show();
 
     }
+
 }
