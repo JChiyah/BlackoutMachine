@@ -216,5 +216,9 @@ public class GameActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    protected void share() {
+
+    }
+
 }
 
