@@ -88,7 +88,7 @@ public class DetailsActivity extends AppCompatActivity {
             editTexts[i].setVisibility(View.INVISIBLE);
         }
         ((Button)findViewById(R.id.editbutton)).setText("Modificar");
-        ((Button)findViewById(R.id.cancelbutton)).setVisibility(View.INVISIBLE);
+        ((Button)findViewById(R.id.cancelbutton)).setVisibility(View.GONE);
     }
 
     protected void saveGame() {

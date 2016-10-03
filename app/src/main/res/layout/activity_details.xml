@@ -36,14 +36,14 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="20dp">
+            android:layout_height="match_parent" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#ffffff"
-                android:textSize="20sp"
+                android:textSize="26sp"
+                android:textStyle="bold"
                 android:id="@+id/nombrepartida"/>
 
             <LinearLayout
@@ -55,6 +55,7 @@
                 <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:stretchColumns="3"
                     android:layout_weight="1"
                     android:id="@+id/detailstable1" >
@@ -63,6 +64,7 @@
                 <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:stretchColumns="3"
                     android:layout_weight="1"
                     android:id="@+id/detailstable2" >
@@ -76,21 +78,15 @@
                 android:layout_gravity="center" >
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:padding="20dp"
+                    style="@style/AppButton"
                     android:text="@string/editarjuego"
                     android:id="@+id/editbutton"
                     android:onClick="editGame" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:padding="20dp"
+                    style="@style/AppButton"
                     android:text="@string/cancelbutton"
-                    android:visibility="invisible"
+                    android:visibility="gone"
                     android:id="@+id/cancelbutton"
                     android:onClick="cancelEdit" />
             </LinearLayout>

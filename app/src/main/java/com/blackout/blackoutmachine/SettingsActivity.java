@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.TreeMap;
 
@@ -61,6 +62,10 @@ public class SettingsActivity extends AppCompatActivity {
     protected void createGame(View view) {
 
         String nombre = ((EditText)findViewById(R.id.inputNombre)).getText().toString();
+        if(nombre.equals("")) {
+            Toast.makeText(SettingsActivity.this, "Debes especificar un nombre para la partida", Toast.LENGTH_SHORT).show();
+            return ;
+        }
 
         // Inputs are saved to editTexts by alphabetical order
         int[] values = new int[8];

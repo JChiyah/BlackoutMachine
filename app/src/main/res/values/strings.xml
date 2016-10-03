@@ -18,16 +18,16 @@
 
     <!-- Main activity -->
     <string name="crearjuego">Crear partida</string>
-    <string name="infojuego">Info</string>
+    <string name="infojuego">Detalles</string>
     <string name="eliminarjuego">Eliminar</string>
 
-    <string name="alertyes">Confirmar</string>
+    <string name="deletequestion">¿Estás seguro de que quieres eliminar esta partida?</string>
+    <string name="alertyes">Eliminar</string>
     <string name="alertno">Cancelar</string>
 
     <!-- Facebook Activity -->
     <string name="darlike">Dale a Me Gusta para jugar!</string>
     <string name="blackout">Blackout</string>
-    <string name="action_settings">LogOut</string>
 
     <!-- Details Activity -->
     <string name="editGameText">Detalles de la partida</string>
