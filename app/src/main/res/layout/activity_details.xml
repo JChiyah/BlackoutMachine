@@ -89,6 +89,11 @@
                     android:visibility="gone"
                     android:id="@+id/cancelbutton"
                     android:onClick="cancelEdit" />
+
+                <Button
+                    style="@style/AppButton"
+                    android:text="@string/emailsbutton"
+                    android:onClick="showEmails" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

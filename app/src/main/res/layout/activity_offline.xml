@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="com.blackout.blackoutmachine.OfflineActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fondo"
+        android:id="@+id/imageView"
+        android:contentDescription="@string/fondo" />
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="240dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/playblackout"
+        android:contentDescription="@string/fondo" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="150dp" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logoblackout"
+            android:contentDescription="@string/logo"
+            android:id="@+id/playblackout"
+            android:layout_centerHorizontal="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/escribiremail"
+                android:textSize="28sp"
+                android:textColor="#ffffff"
+                android:textAlignment="center" />
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:padding="5dp"
+                android:background="#ffffff"
+                android:inputType="textEmailAddress"
+                android:textSize="24dp"
+                android:textColor="#000000"
+                android:id="@+id/inputEmail"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/condiciones"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:textAlignment="center" />
+
+        <Button
+            style="@style/AppButton"
+            android:textSize="24sp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/jugar"
+            android:onClick="playGame" />
+
+    </LinearLayout>
+
+</RelativeLayout>

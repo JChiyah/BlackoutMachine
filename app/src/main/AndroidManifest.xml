@@ -54,6 +54,8 @@
             android:authorities="com.facebook.app.FacebookContentProvider"
             android:exported="true" />
 
+        <activity android:name=".OfflineActivity" />
+        <activity android:name=".DisplayEmailsActivity"></activity>
     </application>
 
 </manifest>

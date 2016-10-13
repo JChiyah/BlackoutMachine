@@ -18,9 +18,7 @@ import java.util.TreeMap;
 
 public class GameActivity extends AppCompatActivity {
 
-    protected boolean endGame = false;
     protected GameObject game;
-    protected View.OnClickListener bgListener;
     protected FrameLayout rlayout;
     protected Random rand = new Random();
     protected int resID;
@@ -46,23 +44,13 @@ public class GameActivity extends AppCompatActivity {
 
         rlayout = (FrameLayout) findViewById(R.id.activity_game);
 
-        bgListener = new View.OnClickListener() {
 
+        rlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(endGame) {
-                    endGame = false;
-                    Intent intent = new Intent(v.getContext(), LoginActivity.class);
-                    intent.putExtra("game_id", getIntent().getIntExtra("game_id", 0));
-                    startActivity(intent);
-                } else {
-                    startGame();
-                    endGame = true;
-                }
+                startGame();
             }
-
-        };
-        rlayout.setOnClickListener(bgListener);
+        });
     }
 
     protected void startGame() {
@@ -115,7 +103,15 @@ public class GameActivity extends AppCompatActivity {
                 public void run() {
                     ((ImageView)findViewById(R.id.letras)).setImageResource(R.drawable.letraspremio);
                     ((ImageView)findViewById(R.id.premio)).setImageResource(resID);
-                    rlayout.setOnClickListener(bgListener);
+                    // Change a listener for main screen
+                    rlayout.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(v.getContext(), LoginActivity.class);
+                            intent.putExtra("game_id", getIntent().getIntExtra("game_id", 0));
+                            startActivity(intent);
+                        }
+                    });
                 }
             });
         }
@@ -127,12 +123,11 @@ public class GameActivity extends AppCompatActivity {
                 for(int i = 0; i < numberOfTimes; i++) {
                     Thread.sleep(sleep);
                     changeImage();
-
                 }
                 displayPrize(); // Decidir y poner un premio
                 //Thread.sleep(sleep/4);
                 displayWinText(); // Mostrar letras de premio
-                selectPrize(premio);
+                updatePrize(premio);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -149,35 +144,48 @@ public class GameActivity extends AppCompatActivity {
                 totalSum = totalSum + entry.getValue();
             }
         }
-        if(premios.size() < 1) { // No hay mas premios a repartir
+        if(totalSum < 1) { // No hay mas premios a repartir
             killActivity();
         }
 
-        selectPrize(null);
+        selectPrize();
     }
 
-    private void selectPrize(String premioAnterior) {
+    private void updatePrize(String premioAnterior) {
         // Quita una unidad del premio anterior
-        if(premioAnterior != null) {
-            prizes.put(premioAnterior, prizes.get(premioAnterior) - 1);
-            // Reflection! Llama a una funcion dinamicamente
-            try {
-                GameObject.class.getMethod("set" + premioAnterior.substring(0, 1).toUpperCase() + premioAnterior.substring(1), Integer.TYPE).invoke(game, prizes.get(premioAnterior));
-            } catch(NoSuchMethodException e) {
-                e.printStackTrace();
-            } catch(IllegalAccessException e) {
-                e.printStackTrace();
-            } catch(InvocationTargetException e) {
-                e.printStackTrace();
-            }
-            DBHandler db = new DBHandler(getApplicationContext());
-            db.updateGame(game);
-            db.close();
-        }
+        prizes.put(premioAnterior, prizes.get(premioAnterior) - 1);
 
+        // Reflection! Llama a una funcion dinamicamente
+        try {
+            GameObject.class.getMethod("set" + premioAnterior.substring(0, 1).toUpperCase() + premioAnterior.substring(1), Integer.TYPE).invoke(game, prizes.get(premioAnterior));
+        } catch(NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch(IllegalAccessException e) {
+            e.printStackTrace();
+        } catch(InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        DBHandler db = new DBHandler(getApplicationContext());
+        db.updateGame(game);
+        db.close();
+        totalSum--;
+        if(totalSum < 1) {
+            // Change a listener for main screen
+            rlayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    killActivity();
+                }
+            });
+        }
+    }
+
+    /**
+     * Selecciona un premio para dar en esta ronda
+     */
+    private void selectPrize() {
         try {
             // Seleccionar el proximo premio
-            int kill = 0;
             do {
                 int index = rand.nextInt(totalSum);
                 int sum = 0;
@@ -187,12 +195,7 @@ public class GameActivity extends AppCompatActivity {
                     i++;
                 }
                 premio = premios.get(Math.max(0,i-1));
-
-                kill++;
-                if (kill > 100) // Parar en caso de que se trabe
-                    killActivity();
             } while (prizes.get(premio) < 1);
-            totalSum--;
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
             killActivity();
@@ -209,11 +212,9 @@ public class GameActivity extends AppCompatActivity {
      * Para los procesos y vuelve al menú principal, posiblemente porque no quedan premios
      */
     private void killActivity() {
-        Toast.makeText(GameActivity.this, "No quedan premios en esta partida", Toast.LENGTH_LONG).show();
-
         Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
+        Toast.makeText(GameActivity.this, "No quedan premios en esta partida", Toast.LENGTH_LONG).show();
     }
 
     protected void share() {

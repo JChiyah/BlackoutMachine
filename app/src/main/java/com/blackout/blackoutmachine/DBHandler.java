@@ -15,11 +15,12 @@ import java.util.List;
 
 public class DBHandler extends SQLiteOpenHelper {
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     // Database Name
     private static final String DB_NAME = "BlackoutDB";
     // Principal table name
     private static final String GAMES_TABLE = "Partidas";
+    private static final String EMAILS_TABLE = "Emails";
 
     public DBHandler(Context context) {
         super(context, DB_NAME, null, DATABASE_VERSION);
@@ -40,12 +41,20 @@ public class DBHandler extends SQLiteOpenHelper {
                 + "sticker INT"
                 + ")";
         db.execSQL(CREATE_GAMES_TABLE);
+
+        String CREATE_EMAILS_TABLE = "CREATE TABLE IF NOT EXISTS " + EMAILS_TABLE + "("
+                + "id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+                + "gameid INT, "
+                + "email TEXT"
+                + ")";
+        db.execSQL(CREATE_EMAILS_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS " + GAMES_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + EMAILS_TABLE);
         // Creating tables again
         onCreate(db);
     }
@@ -158,6 +167,42 @@ public class DBHandler extends SQLiteOpenHelper {
         db.delete(GAMES_TABLE, "id" + " = ?",
                 new String[] { String.valueOf(game.getId()) });
         db.close();
+    }
+
+    /**
+     * Add a new email to the DB
+     * @param emailAddress
+     */
+    public void addEmail(int id, String emailAddress) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        /* Game values */
+        values.put("gameid", id);
+        values.put("email", emailAddress);
+
+        // Inserting row
+        db.insert(EMAILS_TABLE, null, values);
+        db.close(); // Closing database connection
+    }
+
+    public List<String> getEmails(int gameID) {
+        List<String> emailList = new ArrayList<String>();
+
+        // Select All Query
+        String selectQuery = "SELECT * FROM " + EMAILS_TABLE + " WHERE gameid = " + gameID;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // Looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                // Adding contact to list
+                emailList.add(cursor.getString(2));
+            } while (cursor.moveToNext());
+        }
+        // return list
+        return emailList;
     }
 
 }

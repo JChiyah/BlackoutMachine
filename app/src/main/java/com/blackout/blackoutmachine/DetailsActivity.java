@@ -114,4 +114,10 @@ public class DetailsActivity extends AppCompatActivity {
         db.updateGame(updatedGame);
         db.close();
     }
+
+    protected void showEmails(View v) {
+        Intent intent = new Intent(v.getContext(), DisplayEmailsActivity.class);
+        intent.putExtra("game_id", getIntent().getIntExtra("game_id", 0));
+        startActivity(intent);
+    }
 }

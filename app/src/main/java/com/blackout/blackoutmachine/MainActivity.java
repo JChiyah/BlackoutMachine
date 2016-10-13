@@ -3,6 +3,9 @@ package com.blackout.blackoutmachine;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -14,17 +17,34 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
 
     protected int id;
+    protected boolean internetAvailable = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Check if there is internet connection
+        InternetCheck check = new InternetCheck();
+        try {
+            if(!check.execute().get()) {
+                Toast.makeText(MainActivity.this, "No se ha podido conectar con Internet", Toast.LENGTH_LONG).show();
+            }
+        } catch(InterruptedException e) {
+            e.printStackTrace();
+        } catch(ExecutionException e) {
+            e.printStackTrace();
+        }
 
         loadData();
     }
@@ -72,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(v.getContext(), LoginActivity.class);
                         intent.putExtra("game_id", id);
+                        intent.putExtra("internet", internetAvailable);
                         startActivity(intent);
                     }
                 });
@@ -147,6 +168,36 @@ public class MainActivity extends AppCompatActivity {
                     }})
                 .setNegativeButton(R.string.alertno, null).show();
 
+    }
+
+    private class InternetCheck extends AsyncTask<Void, Void, Boolean> {
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            internetAvailable = hasInternetAccess(getApplicationContext());
+            return internetAvailable;
+        }
+
+        private boolean isNetworkAvailable() {
+            ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+            return activeNetworkInfo != null;
+        }
+
+        public boolean hasInternetAccess(Context context) {
+            if (isNetworkAvailable()) {
+                try {
+                    HttpURLConnection urlc = (HttpURLConnection)(new URL("http://clients3.google.com/generate_204").openConnection());
+                    urlc.setRequestProperty("User-Agent", "Android");
+                    urlc.setRequestProperty("Connection", "close");
+                    urlc.setConnectTimeout(1500);
+                    urlc.connect();
+                    return (urlc.getResponseCode() == 204 && urlc.getContentLength() == 0);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return false;
+        }
     }
 
 }

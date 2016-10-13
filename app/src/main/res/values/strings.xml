@@ -33,4 +33,14 @@
     <string name="editGameText">Detalles de la partida</string>
     <string name="editarjuego">Modificar</string>
     <string name="cancelbutton">Cancelar</string>
+    <string name="emailsbutton">Emails</string>
+
+    <!-- Offline Activity -->
+    <string name="escribiremail">Introduce tu email para jugar</string>
+    <string name="condiciones">Al introducir tu email estás aceptando nuestros términos y condiciones</string>
+    <string name="jugar">Jugar!</string>
+    <string name="wrongemail">La dirección de correo no es válida</string>
+
+    <!-- DisplayEmailsActivity -->
+    <string name="displayEmailsText">Emails de esta partida</string>
 </resources>
