@@ -54,8 +54,13 @@
             android:authorities="com.facebook.app.FacebookContentProvider"
             android:exported="true" />
 
-        <activity android:name=".OfflineActivity" />
-        <activity android:name=".DisplayEmailsActivity"></activity>
+        <activity
+            android:name=".OfflineActivity"
+            android:screenOrientation="sensorLandscape" />
+
+        <activity
+            android:name=".DisplayEmailsActivity"
+            android:screenOrientation="sensorLandscape" />
     </application>
 
 </manifest>
